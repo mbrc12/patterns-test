@@ -15,7 +15,7 @@ public class GoogleDetector extends LangDetectorUtils {
     }
 
     public static void register() {
-        LangDetectorFactory.register(new GoogleDetector());
+        LangDetectorFactory.register(getInstance());
     }
 
     private GoogleDetector() {
