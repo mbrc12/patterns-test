@@ -3,10 +3,6 @@ import org.junit.jupiter.api.Test;
 
 public class Tests {
 
-    static {
-        GoogleDetector.register();
-    }
-
     @Test
     public void simpleTestSuccess() {
         LangDetector detector = LangDetectorFactory.getDetector("google");

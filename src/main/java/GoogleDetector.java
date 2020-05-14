@@ -25,4 +25,5 @@ public class GoogleDetector extends LangDetectorUtils {
         // Write business logic to detect non-null text
         return "english";
     }
+
 }
