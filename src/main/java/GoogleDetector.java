@@ -1,10 +1,17 @@
+import java.util.concurrent.atomic.AtomicReference;
+
 public class GoogleDetector extends LangDetectorUtils {
 
     private static GoogleDetector instance;
+    // Provide an Object to lock on
+    private static final Object lock = new Object();
 
     public static GoogleDetector getInstance() {
-        if (instance == null) {
-            instance = new GoogleDetector();
+        // Two threads cannot simultaneously set instance.
+        synchronized (lock) {
+            if (instance == null) {
+                instance = new GoogleDetector();
+            }
         }
         return instance;
     }
